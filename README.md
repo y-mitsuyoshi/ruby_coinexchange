@@ -21,8 +21,67 @@ Or install it yourself as:
     $ gem install ruby_coinexchange
 
 ## Usage
+#### English 
+This gem is a gem to connect to api on coinexchange exchange.  
+https://www.coinexchange.io  
+http://coinexchangeio.github.io/slate/  
 
-TODO: Write usage instructions here
+
+```ruby
+ce = Coinexchange.new
+#Acquire all the markets
+ce.market_summaries
+#Acquisition of individual stock market
+ce.market_summary (ticker_code)
+#Acquire all issues
+ce.currencies
+#Acquisition of individual brands
+ce.currency (ticker_code)
+```
+All ticker_code can be checked with "ce.currencies".
+If it is bitcoin it is BTC.
+
+Please enter the following TickerCode part.
+```ruby
+ce.currency("BTC")
+=> {"CurrencyID"=>"1",
+ "Name"=>"Bitcoin",
+ "TickerCode"=>"BTC",
+ "WalletStatus"=>"online",
+ "Type"=>"currency"}
+```
+
+
+#### Japanese
+このgemはcoinexchange取引所のapiに接続するためのgemです。  
+https://www.coinexchange.io  
+http://coinexchangeio.github.io/slate/  
+
+
+```ruby
+ce = Coinexchange.new
+#全銘柄市場取得
+ce.market_summaries
+#個別銘柄市場取得
+ce.market_summary(ticker_code)
+#全銘柄取得
+ce.currencies
+#個別銘柄取得
+ce.currency(ticker_code)
+```
+全てのticker_codeは"ce.currencies"で確かめることができます。  
+bitcoinならBTCです。  
+
+下記のTickerCodeの部分を入力してください。
+```ruby
+ce.currency("BTC")
+=> {"CurrencyID"=>"1",
+ "Name"=>"Bitcoin",
+ "TickerCode"=>"BTC",
+ "WalletStatus"=>"online",
+ "Type"=>"currency"}
+```
+
 
 ## Development
 
